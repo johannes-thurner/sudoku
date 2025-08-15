@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku App</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Sudoku</h1>
+  <div>
+    <select id="difficulty" onchange="generateSudoku(this.value)">
+      <option value="easy">Leicht</option>
+      <option value="medium" selected>Mittel</option>
+      <option value="hard">Schwer</option>
+    </select>
+    <button onclick="generateSudoku(document.getElementById('difficulty').value)">Neues Sudoku</button>
+  </div>
+  <div id="timer">00:00</div>
+  <div id="board"></div>
+  <div>
+    <button onclick="giveHint()">Hint</button>
+    <button onclick="toggleNotes()">Notizen an/aus</button>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

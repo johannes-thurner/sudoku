@@ -1,0 +1,29 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+}
+#board {
+  display: grid;
+  grid-template-columns: repeat(9, 40px);
+  grid-gap: 2px;
+  margin: 20px auto;
+  width: fit-content;
+}
+.cell {
+  position: relative;
+}
+input {
+  width: 38px;
+  height: 38px;
+  text-align: center;
+  font-size: 18px;
+}
+input.error {
+  background-color: #ffcccc;
+}
+.notes {
+  font-size: 8px;
+  line-height: 10px;
+  text-align: center;
+  color: gray;
+}
