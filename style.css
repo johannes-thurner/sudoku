@@ -1,29 +1,80 @@
 body {
   font-family: sans-serif;
   text-align: center;
+  background: #f8f8f8;
+  margin: 0;
+  padding: 0;
 }
+
+h1 {
+  margin-top: 15px;
+}
+
+#difficulty,
+button {
+  font-size: 1rem;
+  padding: 6px 10px;
+  margin: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: white;
+}
+
+#timer {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
 #board {
   display: grid;
-  grid-template-columns: repeat(9, 40px);
-  grid-gap: 2px;
-  margin: 20px auto;
-  width: fit-content;
+  grid-template-columns: repeat(9, 1fr);
+  max-width: 90vw;
+  margin: 0 auto;
 }
+
 .cell {
-  position: relative;
+  border: 1px solid #ccc;
 }
-input {
-  width: 38px;
-  height: 38px;
+
+.cell input {
+  width: 100%;
+  aspect-ratio: 1; /* macht quadratische Felder */
   text-align: center;
-  font-size: 18px;
+  font-size: calc(1.2vw + 14px); /* passt sich Bildschirmgröße an */
+  border: none;
+  outline: none;
+  background: white;
 }
+
 input.error {
   background-color: #ffcccc;
 }
+
+/* Dickere Linien für 3×3-Boxen */
+.cell:nth-child(3n) {
+  border-right: 2px solid black;
+}
+
+.cell:nth-child(9n + 1) {
+  border-left: 2px solid black;
+}
+
+.cell:nth-child(-n+9) {
+  border-top: 2px solid black;
+}
+
+.cell:nth-child(n+73) {
+  border-bottom: 2px solid black;
+}
+
+/* Notizen */
 .notes {
-  font-size: 8px;
-  line-height: 10px;
-  text-align: center;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  font-size: 0.5rem;
+  line-height: 0.6rem;
   color: gray;
+  pointer-events: none;
 }
